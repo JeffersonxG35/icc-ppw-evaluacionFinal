@@ -8,6 +8,7 @@ import ec.edu.ups.icc.labevaluation.laboratories.services.LaboratoryService;
 public class LaboratoryController {
     private final LaboratoryService service;
     public LaboratoryController(LaboratoryService service){this.service=service;}
+    
     @GetMapping("/available")
     @PreAuthorize("isAuthenticated()")
     public List<LaboratoryResponseDto> findAvailable(@RequestParam Long campusId, @RequestParam Integer minCapacity){
